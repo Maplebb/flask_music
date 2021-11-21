@@ -58,17 +58,26 @@ body{
     font-size: 14px;
     z-index: 1;
 }
-.current-song-detail .lyrics{
+.current-song-detail .lyrics-box{
     height: calc(100% - 60px);
     overflow: hidden;
+    text-align: center;
+    -webkit-mask-image: linear-gradient(180deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.6) 15%,#fff 25%,#fff 75%,hsla(0,0%,100%,.6) 85%,hsla(0,0%,100%,0));
+}
+.current-song-detail .lyrics-box .lyrics{
     text-align: center;
     line-height: 20px;
     font-size: 12px;
     transition: transform .6s ease-out;
-    -webkit-mask-image: linear-gradient(180deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.6) 15%,#fff 25%,#fff 75%,hsla(0,0%,100%,.6) 85%,hsla(0,0%,100%,0));
 }
+/*.current-song-detail .lyrics-box p{*/
+/*    height: 32px;*/
+/*    margin: 0px;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
 
-.current-song-detail .lyrics .on{
+.current-song-detail .lyrics-box .lyrics .on{
     color: #40ce8f;
 }
 

@@ -31,7 +31,7 @@ function split(){//把lrc歌词分割成数组，
         let s = +time_split[1];
         let min = +time_split[0];
         return {
-            time: min * 60 + s,
+            time: min * 60 + s -0.6,
             lrc: str_music//分割好到歌词和时间
         }
     }
@@ -107,7 +107,7 @@ function current(){
         lyricsDiv.children[current_lyric_index_pre].removeAttribute("class")
         current_lyric_index_pre = current_lyric_index_now
     }
-    let scroll_height = String(lyricsDiv.offsetHeight*0.5-current_lyric_index_now*44-22)+"px";
+    let scroll_height = String(lyricsDiv.parentNode.offsetHeight*0.5-current_lyric_index_now*32-16)+"px";
     console.log("translate3d(0px, "+scroll_height+", 0px);");
     lyricsDiv.setAttribute('style',"transform: "+"translate3d(0px, "+scroll_height+", 0px);")
 }
