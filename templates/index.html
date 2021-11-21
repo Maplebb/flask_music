@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <link rel="stylesheet" href="../static/css/emoji.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <title>Title</title>
+</head>
+<body>
+    <div id="app">
+      <header class="music-header"></header>
+      <div class="main-view">
+        <div id="music-data" d="{{music_data}}" style="display: none;"></div>
+        <div class="content">
+          <div class="songs-menu"></div>
+          <div class="current-song-detail">
+            <div class="song-name"></div>
+            <div class="singer"></div>
+            <div class="lyrics"></div>
+          </div>
+        </div>
+        <div class="musicbar">
+          <div class="controlbar">
+            <i class="icon icon-pre"></i>
+            <div class="play-and-pause" onclick="change_play_state()">
+              <i class="icon icon-play" id="icon-play-pause"></i>
+            </div>
+            <i class="icon icon-next"></i>
+          </div>
+          <div class="music-bar-info">
+            <div class="music-now-time">
+            </div>
+            <div class="music-total-time">
+            </div>
+            <div class="music-progress-bar">
+              <div class="music-total-time-bar"></div>
+              <div class="music-loaded-time-bar"></div>
+              <div class="music-played-time-bar">
+                <div class="music-progress-dot"></div>
+              </div>
+            </div>
+          </div>
+          <i class="icon music-next-mode"></i>
+          <i class="icon music-comments"></i>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="../static/js/lyrics.js"></script>
+</body>
+</html>

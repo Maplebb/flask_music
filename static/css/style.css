@@ -1,0 +1,200 @@
+html{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+div,body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+}
+body{
+    background-color: grey;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#app{
+    position: relative;
+    color: hsla(0,0%,100%,.6);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-size: 14px;
+}
+.main-view{
+    width: 100%;
+    height: 100%;
+    padding: 65px 15px 5px 15px;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/*the upper part of the main window*/
+.content{
+    display: flex;
+    width: 100%;
+    height: calc(100% - 80px);
+}
+.content .songs-menu{
+    display: none;
+}
+.content .current-song-detail{
+    margin-left: 0;
+    width: 100%;
+    position: relative;
+}
+.current-song-detail .song-name{
+    position: relative;
+    font-size: 20px;
+    z-index: 1;
+}
+.current-song-detail .singer{
+    margin-top: 5px;
+    display: block;
+    position: relative;
+    font-size: 14px;
+    z-index: 1;
+}
+.current-song-detail .lyrics{
+    height: calc(100% - 60px);
+    overflow: hidden;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    transition: transform .6s ease-out;
+    -webkit-mask-image: linear-gradient(180deg,hsla(0,0%,100%,0) 0,hsla(0,0%,100%,.6) 15%,#fff 25%,#fff 75%,hsla(0,0%,100%,.6) 85%,hsla(0,0%,100%,0));
+}
+
+.current-song-detail .lyrics .on{
+    color: #40ce8f;
+}
+
+/*the lower part of the main window*/
+@media screen and (max-width: 520px){
+    .musicbar{
+        position: relative;
+        flex-direction: column;
+        width: 100%;
+        height: 80px;
+        box-sizing: border-box;
+        padding-bottom: 15px;
+        justify-content: center;
+        align-items: center;background-color: grey;
+        display: flex;
+    }}
+.controlbar{
+    width: 60%;
+    margin-top: 15px;
+    order: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.icon{
+    font-size: 32px;
+    color: #fff;
+}
+.icon.icon-pre::before{
+    content: "\e965";
+}
+.icon.icon-next::before{
+    content: "\e964";
+}
+.icon.icon-play::before{
+    content: "\e95a";
+}
+.icon.icon-pause::before{
+    content: "\e956";
+}
+.controlbar .icon.icon-play,.controlbar .icon.icon-pause{
+    font-size: 24px;
+}
+.controlbar .play-and-pause{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    background-color: hsla(0,0%,100%,.3);
+}
+.music-bar-info{
+    padding-left: 0;
+    order: 1;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 14px;
+    color: hsla(0,0%,100%,.4);
+
+}
+.music-bar-info .music-now-time{
+    height: 15px;
+    padding-left: 5px;
+}
+.music-bar-info .music-total-time{
+    height: 15px;
+    position: absolute;
+    top: 0px;
+    right: 5px;
+}
+.music-bar-info .music-progress-bar{
+    position: relative;
+    padding: 8px 5px 5px 5px;
+    overflow: hidden;
+}
+.music-progress-bar .music-total-time-bar{
+    height: 3px;
+    left: 5px;
+    width: 100%;
+    background: hsla(0,0%,100%,.15);
+}
+.music-progress-bar .music-loaded-time-bar,.music-progress-bar .music-played-time-bar{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    height: 3px;
+    display: inline-block;
+    margin-top: 0px;
+}
+.music-progress-bar .music-loaded-time-bar{
+    background: hsla(0,0%,100%,.2);
+}
+.music-progress-bar .music-played-time-bar{
+    background: #fff;
+}
+.music-played-time-bar .music-progress-dot{
+    position: absolute;
+    top: 50%;
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    transform: translateY(-50%);
+}
+
+.icon.music-next-mode{
+    position: absolute;
+    top: 38px;
+    left: 10px;
+    margin: 0;
+    color: hsla(0,0%,100%,.4);
+}
+.music-next-mode::before{
+    content: "\e961";
+}
+.icon.music-comments{
+    position: absolute;
+    top: 38px;
+    right: 10px;
+    margin: 0;
+    color: hsla(0,0%,100%,.4);
+}
+.music-comments::before{
+    content: "\e96e"
+}
