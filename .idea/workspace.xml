@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb83f581-f418-4364-b26c-ff27dbf311f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/lyrics.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/lyrics.js" afterDir="false" />
@@ -45,6 +43,10 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\86130\Desktop\flask_music\static\pic" />
+      <recent name="C:\Users\86130\Desktop\flask_music\static\mp3" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\项目\音乐播放器\flask_music\templates" />
       <recent name="E:\项目\音乐播放器\flask_music\static\mp3" />
@@ -105,6 +107,7 @@
       <workItem from="1637143549807" duration="3044000" />
       <workItem from="1637203187944" duration="16739000" />
       <workItem from="1637505917532" duration="3758000" />
+      <workItem from="1637918210507" duration="5145000" />
     </task>
     <servers />
   </component>
@@ -112,30 +115,42 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1637509734182">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="199" key="GridCell.Tab.0.bottom" timestamp="1637943330210">
+      <screen x="1920" y="0" width="1536" height="832" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1637509734182" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1637509734182">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1637942892446" />
+    <state width="1493" height="199" key="GridCell.Tab.0.bottom/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1637943330210" />
+    <state width="1493" height="199" key="GridCell.Tab.0.center" timestamp="1637943330210">
+      <screen x="1920" y="0" width="1536" height="832" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1637509734182" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1637509734182">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1637942892446" />
+    <state width="1493" height="199" key="GridCell.Tab.0.center/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1637943330210" />
+    <state width="1493" height="199" key="GridCell.Tab.0.left" timestamp="1637943330210">
+      <screen x="1920" y="0" width="1536" height="832" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1637509734182" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1637509734182">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1637942892446" />
+    <state width="1493" height="199" key="GridCell.Tab.0.left/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1637943330210" />
+    <state width="1493" height="199" key="GridCell.Tab.0.right" timestamp="1637943330210">
+      <screen x="1920" y="0" width="1536" height="832" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1637509734182" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1637942892446" />
+    <state width="1493" height="199" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1637943330210" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1637506487529">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1637506487529" />
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1637505953484">
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1637918210999">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1637505953484" />
+    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1637918210999" />
+    <state x="2125" y="0" width="705" height="716" maximized="true" key="dock-window-1" timestamp="1637922064656">
+      <screen x="1920" y="0" width="1536" height="832" />
+    </state>
+    <state x="2125" y="0" width="705" height="716" maximized="true" key="dock-window-1/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1637922064654" />
+    <state x="2228" y="168" width="881" height="880" maximized="true" key="dock-window-2" timestamp="1637942071556">
+      <screen x="1920" y="0" width="1536" height="832" />
+    </state>
+    <state x="2228" y="168" width="881" height="880" maximized="true" key="dock-window-2/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1637942071556" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -148,6 +163,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/flask_music$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1637508813778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flask_music$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1637943088956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

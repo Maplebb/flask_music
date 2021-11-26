@@ -9,6 +9,8 @@ let play_pause = document.querySelector('.play-and-pause');
 let icon_play_pause = document.querySelector('#icon-play-pause');
 let slider = document.querySelector('.music-played-time-bar');
 let buffer = document.querySelector('.music-loaded-time-bar');
+let music_bg = document.querySelector('.music-bg');
+let music_bg_mask = document.querySelector('.music-bg-mask');
 
 
 let music_data_arr = JSON.parse(music_data.getAttribute('d'));
@@ -68,6 +70,7 @@ function load_track() {
 
     music_total_time.innerHTML = "0:00";
     music_current_time.innerHTML = '0:00';
+    music_bg.setAttribute('style',"background-image: url(\"../static/pic/"+music_data_arr[now_song_num][0]+".jpg\");");
 }
 load_track();
 
