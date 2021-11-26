@@ -10,6 +10,7 @@ def music():
     mp3_dir = "./static/mp3"
     lyrics_dir = "./static/lyrics"
     mp3_files = os.listdir(mp3_dir)
+    print(mp3_files)
     lyrics_files = os.listdir(lyrics_dir)
     mp3_lyrics_arr = []
     for each_mp3 in mp3_files:
@@ -26,4 +27,4 @@ def music():
 
 if __name__ == '__main__':
     app.config['JSON_AS_ASCII'] = False
-    app.run()
+    app.run(port=5001)

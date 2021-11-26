@@ -125,3 +125,7 @@ function current_lyric(){
     return i-1
 }
 audio.ontimeupdate = current;
+audio.onplay = function(){
+    play_state = true;
+    icon_play_pause.setAttribute('class', "icon icon-pause");
+}
