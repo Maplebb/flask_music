@@ -13,8 +13,10 @@ let music_bg = document.querySelector('.music-bg');
 let music_next_mode = document.querySelector('#music-next-mode');
 let menu_bottom = document.querySelector('.menu-bottom');
 let description = document.querySelector('.description');
+let all_song_des = document.querySelector('.all-song-des')
 let favorite_list = document.querySelector('.favorite-list');
-let jiaqian_list = document.querySelector('.jiaqian-list')
+let jiaqian_list = document.querySelector('.jiaqian-list');
+let all_song_list = document.querySelector('.all-song-list')
 
 
 let music_data_arr = JSON.parse(music_data.getAttribute('d'));
@@ -196,17 +198,39 @@ function click_next_mode(){
 }
 
 function change_display(){
-    if(content_display_mode == 0) {
-        content.style.display = "none";
-        description.style.display = "flex";
-        content_display_mode += 1;
-    }
-    else{
-        content.style.display = "flex";
-        description.style.display = "none";
-        content_display_mode -= 1;
+    switch (content_display_mode) {
+        case 0:{
+            content.style.display = "none";
+            description.style.display = "flex";
+            all_song_des.style.display = "none";
+            content_display_mode += 1;
+            break
+        }
+        case 1:{
+            content.style.display = "flex";
+            description.style.display = "none";
+            all_song_des.style.display = "none";
+            content_display_mode -= 1;
+            break
+        }
     }
 }
+function display_all_songs() {
+    content.style.display = "none";
+    description.style.display = "none";
+    all_song_des.style.display = "flex";
+    content_display_mode = 0;
+}
+function all_songs() {
+    for (let i=0;i<music_data_arr.length;i++){
+        let song = document.createElement('div');
+        song.innerHTML = music_data_arr[i][0].split("-")[0]+" - "+music_data_arr[i][0].split("-")[1];
+        song.setAttribute('class', 'single-song');
+        song.setAttribute('id',String(i));
+        all_song_list.append(song)
+    }
+}
+all_songs();
 
 function favorite_song() {
     for (let i = 0; i < music_data_arr.length; i++)

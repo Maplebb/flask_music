@@ -284,20 +284,39 @@ body{
     font-size: 20px;
     overflow: hidden;
 }
-.favorite, .jiaqian{
+.favorite, .jiaqian, .all-song{
+    position: relative;
     padding: 10px;
     margin-top: 15px;
     border-radius: 6px;
     background-color: rgba(255,255,255,0.1);
 }
-.favorite-title, .jiaqian-title{
+.favorite-title, .jiaqian-title, .all-song-title{
     margin-bottom: 5px;
     font-size: 18px;
     color: rgba(255,255,255,0.8);
 }
-.favorite-song, .jiaqian-song{
-    width: 50%;
-    display: inline-block;
+.favorite-song, .jiaqian-song, .single-song{
     margin-top: 5px;
     color: rgba(255,255,255,0.8);
+}
+.jiaqian-song{
+    width: 50%;
+    display: inline-block;
+}
+/*all-song-des part*/
+.all-song-des{
+    position: relative;
+    color: rgba(255,255,255,.4);
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100% - 95px);
+    font-size: 15px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    background-color: rgba(255,255,255,0.1);
+    box-sizing: border-box;
+    overflow: hidden;
 }
