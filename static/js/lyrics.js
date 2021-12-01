@@ -12,7 +12,9 @@ let buffer = document.querySelector('.music-loaded-time-bar');
 let music_bg = document.querySelector('.music-bg');
 let music_next_mode = document.querySelector('#music-next-mode');
 let menu_bottom = document.querySelector('.menu-bottom');
-let description = document.querySelector('.description')
+let description = document.querySelector('.description');
+let favorite_list = document.querySelector('.favorite-list');
+let jiaqian_list = document.querySelector('.jiaqian-list')
 
 
 let music_data_arr = JSON.parse(music_data.getAttribute('d'));
@@ -26,7 +28,7 @@ let current_lyric_index_now;
 let music_next_mode_num = 0;
 let music_next_mode_arr = ["icon in-order","icon loop","icon random"];
 // 0 for one by one,1 for single loop,2 for random
-let content_display_mode = 0
+let content_display_mode = 0;
 // 0 for lyrics,1 for song list
 
 
@@ -125,7 +127,7 @@ function current(){
         lyricsDiv.children[current_lyric_index_pre].removeAttribute("class")
         current_lyric_index_pre = current_lyric_index_now
     }
-    let scroll_height = String(lyricsDiv.parentNode.offsetHeight*0.5-current_lyric_index_now*32-16)+"px";
+    let scroll_height = String((lyricsDiv.parentNode.offsetHeight>0?lyricsDiv.parentNode.offsetHeight:description.offsetHeight-60)*0.5-current_lyric_index_now*32-16)+"px";
     lyricsDiv.setAttribute('style',"transform: "+"translate3d(0px, "+scroll_height+", 0px);")
 }
 
@@ -194,6 +196,45 @@ function click_next_mode(){
 }
 
 function change_display(){
-    content.style.display = "none";
-    description.style.display = "flex";
+    if(content_display_mode == 0) {
+        content.style.display = "none";
+        description.style.display = "flex";
+        content_display_mode += 1;
+    }
+    else{
+        content.style.display = "flex";
+        description.style.display = "none";
+        content_display_mode -= 1;
+    }
 }
+
+function favorite_song() {
+    for (let i = 0; i < music_data_arr.length; i++)
+    {
+        if(music_data_arr[i][0] == "Just carry on-林家谦"){
+            let title = document.querySelector('.favorite-title');
+            title.innerHTML = "今天的音乐投递 📬";
+            let song = document.createElement('div');
+            song.innerHTML = music_data_arr[i][0].split("-")[0]+" - "+music_data_arr[i][0].split("-")[1];
+            song.setAttribute('class', 'favorite-song');
+            song.setAttribute('id',String(i));
+            favorite_list.append(song)
+        }
+    }
+}
+favorite_song();
+function jiaqian_song() {
+    for (let i = 0; i < music_data_arr.length; i++)
+    {
+        if(music_data_arr[i][0].split('-')[1] == "林家谦"){
+            let title = document.querySelector('.jiaqian-title');
+            title.innerHTML = "林家谦 🙇‍"
+            let song = document.createElement('div');
+            song.innerHTML = music_data_arr[i][0].split("-")[0];
+            song.setAttribute('class', 'jiaqian-song');
+            song.setAttribute('id',String(i));
+            jiaqian_list.append(song)
+        }
+    }
+}
+jiaqian_song();

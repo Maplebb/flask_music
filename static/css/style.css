@@ -255,23 +255,49 @@ body{
 }
 
 /* The hidden part */
+.underline{
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    margin: 0;
+}
+.icon.play-in-des{
+    
+}
 .description{
+    color: rgba(255,255,255,.4);
     display: none;
     flex-direction: column;
     width: 100%;
     height: calc(100% - 80px);
+    font-size: 15px;
 }
 .describ_title{
+    color: rgba(255,255,255,0.8);
     position: relative;
     font-size: 22px;
 }
 .describ{
     margin-top: 5px;
     position: relative;
-    font-size: 15px;
 }
 .song-list{
     line-height: 25px;
     font-size: 20px;
     overflow: hidden;
+}
+.favorite, .jiaqian{
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 6px;
+    background-color: rgba(255,255,255,0.1);
+}
+.favorite-title, .jiaqian-title{
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: rgba(255,255,255,0.8);
+}
+.favorite-song, .jiaqian-song{
+    width: 50%;
+    display: inline-block;
+    margin-top: 5px;
+    color: rgba(255,255,255,0.8);
 }
