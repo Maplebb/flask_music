@@ -16,7 +16,10 @@ let description = document.querySelector('.description');
 let all_song_des = document.querySelector('.all-song-des')
 let favorite_list = document.querySelector('.favorite-list');
 let jiaqian_list = document.querySelector('.jiaqian-list');
-let all_song_list = document.querySelector('.all-song-list')
+let all_song_list = document.querySelector('.all-song-list');
+let music_total_time_bar = document.querySelector('.music-total-time-bar');
+let music_played_time_bar = document.querySelector('.music-played-time-bar');
+let music_progress_dot = document.querySelector('.music-progress-dot')
 
 
 let music_data_arr = JSON.parse(music_data.getAttribute('d'));
@@ -85,7 +88,7 @@ function load_track() {
 
     music_total_time.innerHTML = "0:00";
     music_current_time.innerHTML = '0:00';
-    let scroll_height = String(lyricsDiv.parentNode.offsetHeight*0.5-current_lyric_index_now*32-16)+"px";
+    let scroll_height = String(lyricsDiv.parentNode.offsetHeight*0.5-current_lyric_index_now*33-16)+"px";
     lyricsDiv.setAttribute('style',"transform: "+"translate3d(0px, "+scroll_height+", 0px);")
 }
 load_track();
@@ -120,8 +123,8 @@ function current(){
         music_total_time.innerHTML = "0:00";
     music_current_time.innerHTML = String(Math.floor(Number(audio.currentTime)/60)) + ":" + (Math.floor(Number(audio.currentTime)%60)<10?("0"+String(Math.floor(Number(audio.currentTime)%60))):String(Math.floor(Number(audio.currentTime)%60)));
 
-    slider.style.width = "calc("+String(audio.currentTime/audio.duration*100)+"%"+" - "+String(audio.currentTime/audio.duration*10)+"px)";
-    buffer.style.width = "calc("+String(audio.buffered.length*100)+"%"+" - "+String(audio.buffered.length*10)+"px)";
+    slider.style.width = String(audio.currentTime/audio.duration*100)+"%";
+    buffer.style.width = String(audio.buffered.length*100)+"%";
 
     current_lyric_index_now = current_lyric();
     lyricsDiv.children[current_lyric_index_now].setAttribute("class","on")
@@ -150,7 +153,7 @@ function init() {
     lyricsArr = split();
     createPara();
     load_track();
-    icon_play_pause.setAttribute('class', "icon icon-play")
+    icon_play_pause.setAttribute('class', "icon icon-play");
 }
 // bug
 function presong(){
@@ -190,6 +193,10 @@ audio.onplay = function(){
     play_state = true;
     icon_play_pause.setAttribute('class', "icon icon-pause");
 };
+audio.onpause = function(){
+    play_state = false;
+    icon_play_pause.setAttribute('class', "icon icon-play");
+};
 audio.onended = nextsong;
 
 function click_next_mode(){
@@ -224,9 +231,17 @@ function display_all_songs() {
 function all_songs() {
     for (let i=0;i<music_data_arr.length;i++){
         let song = document.createElement('div');
-        song.innerHTML = music_data_arr[i][0].split("-")[0]+" - "+music_data_arr[i][0].split("-")[1];
+        let song_name = document.createElement('div');
+        let singer = document.createElement('div');
+        song_name.innerHTML = music_data_arr[i][0].split('-')[0]
+        song_name.setAttribute('class','single-song-name');
+        singer.innerHTML = music_data_arr[i][0].split('-')[1];
+        singer.setAttribute('class','single-song-singer')
         song.setAttribute('class', 'single-song');
+        song.setAttribute('onclick','click_song_name(this.id)');
         song.setAttribute('id',String(i));
+        song.append(song_name);
+        song.append(singer);
         all_song_list.append(song)
     }
 }
@@ -241,6 +256,7 @@ function favorite_song() {
             let song = document.createElement('div');
             song.innerHTML = music_data_arr[i][0].split("-")[0]+" - "+music_data_arr[i][0].split("-")[1];
             song.setAttribute('class', 'favorite-song');
+            song.setAttribute('onclick','click_song_name(this.id)');
             song.setAttribute('id',String(i));
             favorite_list.append(song)
         }
@@ -256,9 +272,63 @@ function jiaqian_song() {
             let song = document.createElement('div');
             song.innerHTML = music_data_arr[i][0].split("-")[0];
             song.setAttribute('class', 'jiaqian-song');
+            song.setAttribute('onclick','click_song_name(this.id)');
             song.setAttribute('id',String(i));
             jiaqian_list.append(song)
         }
     }
 }
 jiaqian_song();
+function click_song_name(id) {
+    now_song_num = id;
+    init();
+}
+// music_total_time_bar.onmousedown = function (event) {
+//     // let event = event || window.event;
+//     let leftVal = this.getBoundingClientRect().left;
+//     console.log(leftVal);
+//     let that = this;
+//     // 拖动一定写到 down 里面才可以
+//     document.onmousemove = function(event){
+//     // let event = event || window.event;
+//     barleft = event.clientX - leftVal;
+//     if(barleft < 0)
+//       barleft = 0;
+//     else if(barleft > music_total_time_bar.offsetWidth)
+//       barleft = music_total_time_bar.offsetWidth;
+//     music_played_time_bar.style.width = barleft +'px' ;
+//
+//
+//     //防止选择内容--当拖动鼠标过快时候，弹起鼠标，bar也会移动，修复bug
+//     window.getSelection ? window.getSelection().removeAllRanges() :
+//     document.selection.empty();
+//     }
+// };
+// document.onmouseup = function(){
+//     document.onmousemove = null; //弹起鼠标不做任何操作
+// };
+music_progress_dot.addEventListener('mousedown', (e) => {
+        pausesong()
+
+
+        this.onmousemove = dragHandler;
+        this.onmouseup = function(){
+          playsong()
+          this.onmousemove = null;
+          this.onmouseup = null
+        }
+    });
+
+    let dragHandler = (e) => {
+      let progressClinetW = music_total_time_bar.clientWidth
+      let startPos = music_total_time_bar.getBoundingClientRect().left
+
+
+      let width = e.clientX - startPos
+
+      music_played_time_bar.style.width = width + 'px'
+
+      let current_Time = width / progressClinetW * audio.duration
+
+      audio.currentTime = current_Time
+    }

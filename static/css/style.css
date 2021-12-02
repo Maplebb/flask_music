@@ -95,7 +95,7 @@ body{
     margin-top: 5px;
     display: block;
     position: relative;
-    font-size: 14px;
+    font-size: 15px;
     z-index: 1;
 }
 .current-song-detail .lyrics-box{
@@ -107,7 +107,7 @@ body{
 .current-song-detail .lyrics-box .lyrics{
     text-align: center;
     line-height: 20px;
-    font-size: 12px;
+    font-size: 13px;
     transition: transform .6s ease-out;
 }
 /*.current-song-detail .lyrics-box p{*/
@@ -184,12 +184,14 @@ body{
 .music-bar-info .music-now-time{
     height: 15px;
     padding-left: 5px;
+    font-size: 13px;
 }
 .music-bar-info .music-total-time{
     height: 15px;
     position: absolute;
     top: 0px;
     right: 5px;
+    font-size: 13px;
 }
 .music-bar-info .music-progress-bar{
     position: relative;
@@ -197,18 +199,15 @@ body{
     overflow: hidden;
 }
 .music-progress-bar .music-total-time-bar{
+    position: relative;
     height: 3px;
-    left: 5px;
     width: 100%;
     background: hsla(0,0%,100%,.15);
 }
 .music-progress-bar .music-loaded-time-bar,.music-progress-bar .music-played-time-bar{
     position: absolute;
-    top: 50%;
-    left: 5px;
     height: 3px;
     display: inline-block;
-    margin-top: 0px;
 }
 .music-progress-bar .music-loaded-time-bar{
     background: hsla(0,0%,100%,.2);
@@ -304,6 +303,10 @@ body{
     width: 50%;
     display: inline-block;
 }
+/*.single-song{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
 /*all-song-des part*/
 .all-song-des{
     position: relative;
@@ -320,3 +323,13 @@ body{
     box-sizing: border-box;
     overflow: hidden;
 }
+.single-song-name{
+    display: inline-block;
+    width: 60%;
+}
+.single-song-singer{
+    display: inline-block;
+    width: 40%;
+    text-align: right;
+}
+
