@@ -307,24 +307,25 @@ function click_song_name(id) {
 // document.onmouseup = function(){
 //     document.onmousemove = null; //弹起鼠标不做任何操作
 // };
-music_progress_dot.addEventListener('mousedown', (e) => {
+music_progress_dot.addEventListener('touchstart', (e) => {
         pausesong()
 
 
-        this.onmousemove = dragHandler;
-        this.onmouseup = function(){
+        this.ontouchmove = dragHandler;
+        this.ontouchend = function(){
           playsong()
-          this.onmousemove = null;
-          this.onmouseup = null
+          this.ontouchmove = null;
+          this.ontouchend = null
         }
     });
 
     let dragHandler = (e) => {
+        console.log(1)
       let progressClinetW = music_total_time_bar.clientWidth
       let startPos = music_total_time_bar.getBoundingClientRect().left
 
 
-      let width = e.clientX - startPos
+      let width = e.touches[0].clientX - startPos
 
       music_played_time_bar.style.width = width + 'px'
 
