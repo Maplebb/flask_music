@@ -19,7 +19,7 @@ let jiaqian_list = document.querySelector('.jiaqian-list');
 let all_song_list = document.querySelector('.all-song-list');
 let music_total_time_bar = document.querySelector('.music-total-time-bar');
 let music_played_time_bar = document.querySelector('.music-played-time-bar');
-let music_progress_dot = document.querySelector('.music-progress-dot')
+let music_progress_dot_parent = document.querySelector('.music-progress-dot-parent')
 
 
 let music_data_arr = JSON.parse(music_data.getAttribute('d'));
@@ -307,7 +307,7 @@ function click_song_name(id) {
 // document.onmouseup = function(){
 //     document.onmousemove = null; //弹起鼠标不做任何操作
 // };
-music_progress_dot.addEventListener('touchstart', (e) => {
+music_progress_dot_parent.addEventListener('touchstart', (e) => {
         pausesong()
 
 
